@@ -366,14 +366,13 @@ def help():
     helpMessage = "╭──「 // INSERT HELPER COMMANDS // 」──" + "\n" + \
                   "│ " + key + "\n" + \
                   "│ " + key + "1) Tagall/Mentioning/Tagall\n" + \
-                  "│ " + key + "2) Terjemah Arab-on [/off]\n" + \
-                  "│ " + key + "3) Terjemah Indo-on [/off]\n" + \
-                  "│ " + key + "4) Terjemah Eng-on [/off]\n" + \
+                  "│ " + key + "2) Terjemah Arab*on /[off]\n" + \
+                  "│ " + key + "3) Terjemah Indo*on /[off]\n" + \
+                  "│ " + key + "4) Terjemah Eng*on /[off]\n" + \
                   "│ " + key + "5) Lurking on/off\n" + \
                   "│ " + key + "6) Get Lurkers\n" + \
-                  "│ " + key + "7) Terjemahan\n" + \
-                  "│ " + key + "8) Rinda bye\n" + \
-                  "│ " + key + "9) About\n" + \
+                  "│ " + key + "7) Rinda bye\n" + \
+                  "│ " + key + "8) About\n" + \
                   "│ " + key + "\n" + \
                   "│ " + key + "[ Rinda Made with Loves by @! ]\n" + \
                   "╰──「 // ENDED HELPER COMMANDS // 」──"
@@ -921,8 +920,12 @@ def bot(op):
                         cctv['sidermem'][op.param1] += "\n~ " + Name
                         siderMembers(op.param1, [op.param2])
                         contact = aditmadzs.getContact(op.param2)
-                        image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
-                        aditmadzs.sendImageWithURL(op.param1, image)                        
+                        msg.contentType = 13
+                        msg.contentMetadata = {'mid': msg._from}
+                        contact = aditmadzs.getContact(sender)
+                        aditmadzs.sendMessage1(msg)
+                        #image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
+                        #aditmadzs.sendImageWithURL(op.param1, image)
                         
                     
         if op.type == 65:
@@ -3510,8 +3513,8 @@ def bot(op):
                                          msgs = "Simi-simi Sudah Tidak Aktif"
                                     ki.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs) 
 
-                        elif 'Terjemah eng-' in msg.text:
-                              spl = msg.text.replace('Terjemah eng-','')
+                        elif 'Terjemah eng*' in msg.text:
+                              spl = msg.text.replace('Terjemah eng*','')
                               if spl == 'on':
                                   if msg.to in translateen:
                                        msgs = "Terjemah langsung Status Aktif"
@@ -3529,8 +3532,8 @@ def bot(op):
                                          msgs = "Terjemah langsung Sudah Tidak Aktif"
                                     aditmadzs.sendMessage(msg.to, "「 Translate to English 」\n" + msgs)
                                     
-                        elif 'Terjemah indo-' in msg.text:
-                              spl = msg.text.replace('Terjemah indo-','')
+                        elif 'Terjemah indo*' in msg.text:
+                              spl = msg.text.replace('Terjemah indo*','')
                               if spl == 'on':
                                   if msg.to in translateid:
                                        msgs = "Terjemah langsung Status Aktif"
@@ -3548,8 +3551,8 @@ def bot(op):
                                          msgs = "Terjemah langsung Sudah Tidak Aktif"
                                     aditmadzs.sendMessage(msg.to, "「 Translate to Indonesia 」\n" + msgs)                                    
 
-                        elif 'Terjemah arab-' in msg.text:
-                              spl = msg.text.replace('Terjemah arab-','')
+                        elif 'Terjemah arab*' in msg.text:
+                              spl = msg.text.replace('Terjemah arab*','')
                               if spl == 'on':
                                   if msg.to in translatear:
                                        msgs = "Terjemah langsung Status Aktif"
