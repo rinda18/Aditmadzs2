@@ -369,7 +369,7 @@ def help():
                   "│ " + key + "2) Terjemah Arab*on /[off]\n" + \
                   "│ " + key + "3) Terjemah Indo*on /[off]\n" + \
                   "│ " + key + "4) Terjemah Eng*on /[off]\n" + \
-                  "│ " + key + "5) Get Get Announce\n" + \
+                  "│ " + key + "5) Get Latest Announce\n" + \
                   "│ " + key + "6) Lurking on/off\n" + \
                   "│ " + key + "7) Get Lurkers\n" + \
                   "│ " + key + "8) Rinda bye\n" + \
@@ -1609,7 +1609,7 @@ def bot(op):
                                bot = "Aktif " +waktu(eltime)
                                aditmadzs.sendMessage(msg.to,bot)
 
-                        elif cmd == "get new announce":
+                        elif cmd == "get latest announce":
                           if wait["selfbot"] == True:
                             try:
                                 gett = aditmadzs.getChatRoomAnnouncements(msg.to)
