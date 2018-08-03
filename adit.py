@@ -366,11 +366,14 @@ def help():
     helpMessage = "╭──「 // INSERT HELPER COMMANDS // 」──" + "\n" + \
                   "│ " + key + "\n" + \
                   "│ " + key + "1) Tagall/Mentioning/Tagall\n" + \
-                  "│ " + key + "2) Lurking on/off\n" + \
-                  "│ " + key + "3) Get Lurkers\n" + \
-                  "│ " + key + "4) Terjemahan\n" + \
-                  "│ " + key + "5) Rinda bye\n" + \
-                  "│ " + key + "6) About\n" + \
+                  "│ " + key + "2) Terjemah Arab-on [/off]\n" + \
+                  "│ " + key + "3) Terjemah Indo-on [/off]\n" + \
+                  "│ " + key + "4) Terjemah Eng-on [/off]\n" + \
+                  "│ " + key + "5) Lurking on/off\n" + \
+                  "│ " + key + "6) Get Lurkers\n" + \
+                  "│ " + key + "7) Terjemahan\n" + \
+                  "│ " + key + "8) Rinda bye\n" + \
+                  "│ " + key + "9) About\n" + \
                   "│ " + key + "\n" + \
                   "│ " + key + "[ Rinda Made with Loves by @! ]\n" + \
                   "╰──「 // ENDED HELPER COMMANDS // 」──"
@@ -1320,7 +1323,7 @@ def bot(op):
                                sendMentions(to, str(helpMessage), [poey])
                               #aditmadzs.sendMessage(msg.to, str(helpMessage))
 
-                        if cmd == "Terjemahan":
+                        if cmd == "Terjemahans":
                           if wait["selfbot"] == True:
                             #if msg._from in admin:
                                terjMessage = help()
@@ -3507,8 +3510,8 @@ def bot(op):
                                          msgs = "Simi-simi Sudah Tidak Aktif"
                                     ki.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs) 
 
-                        elif 'Terjemah ke eng' in msg.text:
-                              spl = msg.text.replace('Terjemah ke eng','')
+                        elif 'Terjemah eng-' in msg.text:
+                              spl = msg.text.replace('Terjemah eng-','')
                               if spl == 'on':
                                   if msg.to in translateen:
                                        msgs = "Terjemah langsung Status Aktif"
@@ -3526,8 +3529,8 @@ def bot(op):
                                          msgs = "Terjemah langsung Sudah Tidak Aktif"
                                     aditmadzs.sendMessage(msg.to, "「 Translate to English 」\n" + msgs)
                                     
-                        elif 'Terjemah ke indo' in msg.text:
-                              spl = msg.text.replace('Terjemah ke indo','')
+                        elif 'Terjemah indo-' in msg.text:
+                              spl = msg.text.replace('Terjemah indo-','')
                               if spl == 'on':
                                   if msg.to in translateid:
                                        msgs = "Terjemah langsung Status Aktif"
@@ -3545,8 +3548,8 @@ def bot(op):
                                          msgs = "Terjemah langsung Sudah Tidak Aktif"
                                     aditmadzs.sendMessage(msg.to, "「 Translate to Indonesia 」\n" + msgs)                                    
 
-                        elif 'Terjemah ke arab' in msg.text:
-                              spl = msg.text.replace('Terjemah ke arab','')
+                        elif 'Terjemah arab-' in msg.text:
+                              spl = msg.text.replace('Terjemah arab-','')
                               if spl == 'on':
                                   if msg.to in translatear:
                                        msgs = "Terjemah langsung Status Aktif"
