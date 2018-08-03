@@ -12,13 +12,13 @@ from googletrans import Translator
 import youtube_dl
 
 #aditmadzs = LineClient()
-aditmadzs = LineClient(authToken='ISI TOKEN MU CINTA')
+aditmadzs = LineClient(authToken='Ev7YMUKvcwZ2b1nX5bq3.m7QAK9mmg/fv3Yt11op1GW./FJk+IyySoLCRQQHkNgUiHxSWCdM50sCs5XR/I44BM0=')
 aditmadzs.log("Auth Token : " + str(aditmadzs.authToken))
 channel = LineChannel(aditmadzs)
 aditmadzs.log("Channel Access Token : " + str(channel.channelAccessToken))
 
 #ki = LineClient()
-ki = LineClient(authToken='ISI TOKEN MU CINTA')
+ki = LineClient(authToken='Ev9lMVGIBDEFEqwhqcJ6.nLjIV2bjs0bICuBwl5X0fG.5qWDGJbwpIh6PY9UDfxn6iD3p1yjWZo0O8NBsTWixGg=')
 ki.log("Auth Token : " + str(ki.authToken))
 channel1 = LineChannel(ki)
 ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
@@ -26,10 +26,10 @@ ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 #Jangan ubah mid creator TOD
 poll = LinePoll(aditmadzs)
 call = aditmadzs
-creator = ["u874a7502c02896b2edbb3445c2615d35"]
-owner = ["u874a7502c02896b2edbb3445c2615d35"]
-admin = ["u874a7502c02896b2edbb3445c2615d35"]
-staff = ["u874a7502c02896b2edbb3445c2615d35"]
+creator = ["uac8e3eaf1eb2a55770bf10c3b2357c33"]
+owner = ["uac8e3eaf1eb2a55770bf10c3b2357c33"]
+admin = ["uac8e3eaf1eb2a55770bf10c3b2357c33"]
+staff = ["uac8e3eaf1eb2a55770bf10c3b2357c33"]
 mid = aditmadzs.getProfile().mid
 Amid = ki.getProfile().mid
 KAC = [aditmadzs,ki]
@@ -191,7 +191,7 @@ def runtime(secs):
 def mentionMembers(to, mid):
     try:
         arrData = ""
-        textx = "Total Mention User「{}」\n\n  [ Mention ]\n1. ".format(str(len(mid)))
+        textx = "Mentioning < {} >\n\n  [ Mention ]\n1. ".format(str(len(mid)))
         arr = []
         no = 1
         num = 2
@@ -218,7 +218,7 @@ def mentionMembers(to, mid):
 def siderMembers(to, mid):
     try:
         arrData = ""
-        textx = "Total Sider User「{}」\nHaii ".format(str(len(mid)))
+        textx = "Siders < {} >\nHei ".format(str(len(mid)))
         arr = []
         no = 1
         num = 2
