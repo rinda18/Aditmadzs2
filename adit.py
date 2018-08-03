@@ -365,9 +365,12 @@ def help():
     key = key.title()
     helpMessage = "╭──「 // INSERT HELPER COMMANDS // 」──" + "\n" + \
                   "│ " + key + "\n" + \
-                  "│ " + key + "1) Lurking on/off\n" + \
-                  "│ " + key + "2) Get Lurkers\n" + \
-                  "│ " + key + "3) Tagall/Mentioning/Tagall\n" + \
+                  "│ " + key + "1) Tagall/Mentioning/Tagall\n" + \
+                  "│ " + key + "2) Lurking on/off\n" + \
+                  "│ " + key + "3) Get Lurkers\n" + \
+                  "│ " + key + "4) Terjemahan\n" + \
+                  "│ " + key + "5) Rinda bye\n" + \
+                  "│ " + key + "6) About\n" + \
                   "│ " + key + "\n" + \
                   "│ " + key + "[ Made by @! ]\n" + \
                   "╰──「 // ENDED HELPER COMMANDS // 」──"
@@ -552,10 +555,22 @@ def helpbot():
                    "│ " + key + "Refresh\n" + \
                    "╰───「 // ENDED RINDA'S COMMANDS // 」──"
     return helpMessage1
+
+def terjemahan():
+    terjemahanMessage = """
+╭──「 // INSERT TRANSL COMMANDS // 」──
+│
+│ Terjemah ke indo on/off
+│ Terjemah ke eng on/off
+│ Terjemah ke arab on/off
+│
+╰───「 // ENDED TRANSL COMMANDS // 」──
+"""
+    return terjemahanMessage
     
 def infomeme():
     helpMessage2 = """
-╭──「 // INSERT MEME COMMANDS // 」──
+──「 // INSERT MEME COMMANDS // 」──
 │ Buzz
 │ Spongebob
 │ Patrick
@@ -1291,6 +1306,12 @@ def bot(op):
                                sendMentions(to, str(helpMessage), [poey])
                               #aditmadzs.sendMessage(msg.to, str(helpMessage))
 
+                        if cmd == "Terjemahan":
+                          if wait["selfbot"] == True:
+                            #if msg._from in admin:
+                               terjemahanMessage = help()
+                               aditmadzs.sendMessage(msg.to, str(terjemahanMessage))
+
                         if cmd == "helpz":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
@@ -1429,11 +1450,29 @@ def bot(op):
                                     ma = aditmadzs.getContact(i)
                                     aditmadzs.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
 
-                        elif cmd == "about" or cmd == "informasi":
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                               sendMention(msg.to, sender, "// About Rinda //\n")
-                               aditmadzs.sendMessage(msg.to, None, contentMetadata={'mid': mid}, contentType=13)
+                        elif cmd.startswith("about"):
+                            try:
+                                arr = []
+                                Ownerz = "uac8e3eaf1eb2a55770bf10c3b2357c33"
+                                creator = aditmadzs.getContact(Ownerz)
+                                contact = aditmadzs.getContact(puyMid)
+                                grouplist = aditmadzs.getGroupIdsJoined()
+                                contactlist = aditmadzs.getAllContactIds()
+                                blockedlist = aditmadzs.getBlockedContactIds()
+                                ret_ = " "
+                                ret_ += " Bot Name : {}".format(contact.displayName)
+                                ret_ += "\n  In Groups : {}".format(str(len(grouplist)))
+                                ret_ += "\n  Friends : {}".format(str(len(contactlist)))
+                                ret_ += "\n  Blocked Account : {}".format(str(len(blockedlist)))                                    
+                                #ret_ += "\n  [ About Selfbot ]"
+                                #ret_ += "\n  Version : Premium"
+                                #ret_ += "\n  Creator : {}".format(creator.displayName)
+                                #ret_ += "\n  Creator : @!".format(Owner)
+                                aditmadzs.sendMessage(to, str(ret_))
+                                #puy.sendMessage(to, "「 Read Text Below 」")
+                                sendMentions(to, "「 About Rinda 」\n\nThe Beginning of this Bot Comes from Helloworld, I'm just Reworked This!\n\nOf Course Special Thanks To HelloWorld, And the Friends Around Me!\n\n*Rinda:3 Made with Loves by @!", [Ownerz])
+                            except Exception as e:
+                                aditmadzs.sendMessage(msg.to, str(e))
 
                         elif cmd == "me" or text.lower() == 'me':
                           if wait["selfbot"] == True:
@@ -1443,7 +1482,7 @@ def bot(op):
                                contact = aditmadzs.getContact(sender)
                                sendMentions(to, "(!) @!", [sender])
                                aditmadzs.sendImageWithURL(to, 'http://dl.profile.line-cdn.net/{}'.format(contact.pictureStatus))
-                               #aditmadzs.sendMessage1(msg)
+                               aditmadzs.sendMessage1(msg)
 
                         elif text.lower() == "mymid":
                             if msg._from in admin:
@@ -1471,7 +1510,7 @@ def bot(op):
                                else:
                                    aditmadzs.sendImageWithURL(msg.to, 'http://dl.profile.line.naver.jp'+str(mi.picturePath))
 
-                        elif cmd == "mybot":
+                        elif cmd == "mybott":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                msg.contentType = 13
@@ -1498,14 +1537,14 @@ def bot(op):
                                except:
                                    pass
 
-                        elif cmd.startswith("broadcast: "):
+                        elif cmd.startswith("rinbc: "):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                sep = text.split(" ")
                                pesan = text.replace(sep[0] + " ","")
                                saya = aditmadzs.getGroupIdsJoined()
                                for group in saya:
-                                   aditmadzs.sendMessage(group,"=======[BROADCAST]=======\n\n"+pesan+"\n\nCreator : line.me/ti/p/~adit_cmct")
+                                   aditmadzs.sendMessage(group, pesan)
 
                         elif text.lower() == "mykey":
                           if wait["selfbot"] == True:
@@ -1532,7 +1571,7 @@ def bot(op):
                         elif cmd == "restart":
                           if wait["selfbot"] == True:
                             if msg._from in creator:
-                               aditmadzs.sendMessage(msg.to, "Restart Sukses Bos!...")
+                               aditmadzs.sendMessage(msg.to, "Restarted")
                                Setmain["restartPoint"] = msg.to
                                restartBot()
                             
@@ -1917,11 +1956,12 @@ def bot(op):
                                 G.preventedJoinByTicket = True
                                 ki.updateGroup(G)
 
-                        elif cmd == "bye":
+                        elif cmd == "rinda bye":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            #if msg._from in admin:
                                 G = aditmadzs.getGroup(msg.to)
-                                ki.sendMessage(msg.to, "Bye bye group "+str(G.name))
+                                aditmadzs.sendMessage(msg.to, "Sampai Jumpa "+str(G.name))
+                                aditmadzs.leaveGroup(msg.to)
                                 ki.leaveGroup(msg.to)
 
                         elif cmd.startswith("leave "):
@@ -3427,8 +3467,8 @@ def bot(op):
                             aditmadzs.sendMessage(msg.to, A)
 
 #===========Settings============#
-                        elif 'Simi ' in msg.text:
-                              spl = msg.text.replace('Simi ','')
+                        elif 'Simiz ' in msg.text:
+                              spl = msg.text.replace('Simiz ','')
                               if spl == 'on':
                                   if msg.to in simisimi:
                                        msgs = "Simi-simi sudah aktif"
@@ -3445,101 +3485,63 @@ def bot(op):
                                     else:
                                          msgs = "Simi-simi Sudah Tidak Aktif"
                                     ki.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs) 
-                                    
-                        elif 'Autotrans th-' in msg.text:
-                              spl = msg.text.replace('Autotrans th-','')
-                              if spl == 'on':
-                                  if msg.to in translateth:
-                                       msgs = "Auto Translate sudah aktif"
-                                  else:
-                                       translateth.append(msg.to)
-                                       ginfo = ki.getGroup(msg.to)
-                                       msgs = "Auto Translate Diaktifkan\nDi Group : " +str(ginfo.name)
-                                  ki.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
-                              elif spl == 'off':
-                                    if msg.to in translateth:
-                                         translateth.remove(msg.to)
-                                         ginfo = ki.getGroup(msg.to)
-                                         msgs = "Auto Translate Dinonaktifkan\nDi Group : " +str(ginfo.name)
-                                    else:
-                                         msgs = "Auto Translate Sudah Tidak Aktif"
-                                    ki.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)                                    
-                                    
-                        elif 'Autotrans en-' in msg.text:
-                              spl = msg.text.replace('Autotrans en-','')
+
+                        elif 'Terjemah ke eng' in msg.text:
+                              spl = msg.text.replace('Terjemah ke eng','')
                               if spl == 'on':
                                   if msg.to in translateen:
-                                       msgs = "Auto Translate sudah aktif"
+                                       msgs = "Terjemah langsung Status Aktif"
                                   else:
                                        translateen.append(msg.to)
-                                       ginfo = ki.getGroup(msg.to)
-                                       msgs = "Auto Translate Diaktifkan\nDi Group : " +str(ginfo.name)
-                                  ki.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
+                                       ginfo = aditmadzs.getGroup(msg.to)
+                                       msgs = "Terjemah langsung Diaktifkan Di Grup \n< " +str(ginfo.name + " >")
+                                  aditmadzs.sendMessage(msg.to, "「 Translate to English 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in translateen:
                                          translateen.remove(msg.to)
-                                         ginfo = ki.getGroup(msg.to)
-                                         msgs = "Auto Translate Dinonaktifkan\nDi Group : " +str(ginfo.name)
+                                         ginfo = aditmadzs.getGroup(msg.to)
+                                         msgs = "Terjemah langsung Dinonaktifkan Di Grup \n< " +str(ginfo.name + " >")
                                     else:
-                                         msgs = "Auto Translate Sudah Tidak Aktif"
-                                    ki.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
+                                         msgs = "Terjemah langsung Sudah Tidak Aktif"
+                                    aditmadzs.sendMessage(msg.to, "「 Translate to English 」\n" + msgs)
                                     
-                        elif 'Autotrans id-' in msg.text:
-                              spl = msg.text.replace('Autotrans id-','')
+                        elif 'Terjemah ke indo' in msg.text:
+                              spl = msg.text.replace('Terjemah ke indo','')
                               if spl == 'on':
                                   if msg.to in translateid:
-                                       msgs = "Auto Translate sudah aktif"
+                                       msgs = "Terjemah langsung Status Aktif"
                                   else:
                                        translateid.append(msg.to)
-                                       ginfo = ki.getGroup(msg.to)
-                                       msgs = "Auto Translate Diaktifkan\nDi Group : " +str(ginfo.name)
-                                  ki.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
+                                       ginfo = aditmadzs.getGroup(msg.to)
+                                       msgs = "Terjemah langsung Diaktifkan Di Grup \n< " +str(ginfo.name + " >")
+                                  aditmadzs.sendMessage(msg.to, "「 Translate to Indonesia 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in translateid:
                                          translateid.remove(msg.to)
-                                         ginfo = ki.getGroup(msg.to)
-                                         msgs = "Auto Translate Dinonaktifkan\nDi Group : " +str(ginfo.name)
+                                         ginfo = aditmadzs.getGroup(msg.to)
+                                         msgs = "Terjemah langsung Dinonaktifkan Di Grup \n< " +str(ginfo.name + " >")
                                     else:
-                                         msgs = "Auto Translate Sudah Tidak Aktif"
-                                    ki.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
-                                    
-                        elif 'Autotrans tw-' in msg.text:
-                              spl = msg.text.replace('Autotrans tw-','')
-                              if spl == 'on':
-                                  if msg.to in translatetw:
-                                       msgs = "Auto Translate sudah aktif"
-                                  else:
-                                       translatetw.append(msg.to)
-                                       ginfo = ki.getGroup(msg.to)
-                                       msgs = "Auto Translate Diaktifkan\nDi Group : " +str(ginfo.name)
-                                  ki.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
-                              elif spl == 'off':
-                                    if msg.to in translatetw:
-                                         translatetw.remove(msg.to)
-                                         ginfo = ki.getGroup(msg.to)
-                                         msgs = "Auto Translate Dinonaktifkan\nDi Group : " +str(ginfo.name)
-                                    else:
-                                         msgs = "Auto Translate Sudah Tidak Aktif"
-                                    ki.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
-                                    
-                        elif 'Autotrans ar-' in msg.text:
-                              spl = msg.text.replace('Autotrans ar-','')
+                                         msgs = "Terjemah langsung Sudah Tidak Aktif"
+                                    aditmadzs.sendMessage(msg.to, "「 Translate to Indonesia 」\n" + msgs)                                    
+
+                        elif 'Terjemah ke arab' in msg.text:
+                              spl = msg.text.replace('Terjemah ke arab','')
                               if spl == 'on':
                                   if msg.to in translatear:
-                                       msgs = "Auto Translate sudah aktif"
+                                       msgs = "Terjemah langsung Status Aktif"
                                   else:
                                        translatear.append(msg.to)
-                                       ginfo = ki.getGroup(msg.to)
-                                       msgs = "Auto Translate Diaktifkan\nDi Group : " +str(ginfo.name)
-                                  ki.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
+                                       ginfo = aditmadzs.getGroup(msg.to)
+                                       msgs = "Terjemah langsung Diaktifkan Di Grup \n< " +str(ginfo.name + " >")
+                                  aditmadzs.sendMessage(msg.to, "「 Translate to Arab 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in translatear:
                                          translatear.remove(msg.to)
-                                         ginfo = ki.getGroup(msg.to)
-                                         msgs = "Auto Translate Dinonaktifkan\nDi Group : " +str(ginfo.name)
+                                         ginfo = aditmadzs.getGroup(msg.to)
+                                         msgs = "Terjemah langsung Dinonaktifkan Di Grup \n< " +str(ginfo.name + " >")
                                     else:
-                                         msgs = "Auto Translate Sudah Tidak Aktif"
-                                    ki.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)                                    
+                                         msgs = "Terjemah langsung Sudah Tidak Aktif"
+                                    aditmadzs.sendMessage(msg.to, "「 Translate to Arab 」\n" + msgs)                                    
 
                         elif 'Welcome ' in msg.text:
                            if msg._from in admin:
