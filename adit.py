@@ -1309,7 +1309,7 @@ def bot(op):
                         if cmd == "Terjemahan":
                           if wait["selfbot"] == True:
                             #if msg._from in admin:
-                               terjemahanMessage = help()
+                               terjemahanMessage = terjemahan()
                                aditmadzs.sendMessage(msg.to, str(terjemahanMessage))
 
                         if cmd == "helpz":
@@ -1474,11 +1474,11 @@ def bot(op):
                             except Exception as e:
                                 aditmadzs.sendMessage(msg.to, str(e))
 
-                        if cmd == "about":
+                        elif text.lower() == "about":
                           if wait["selfbot"] == True:
-                               poey = "uac8e3eaf1eb2a55770bf10c3b2357c33"
-                               creator = aditmadzs.getContact(poey)
-                               sendMentions(to, poey)
+                            poey = "uac8e3eaf1eb2a55770bf10c3b2357c33"
+                            creator = aditmadzs.getContact(poey)
+                            sendMentions(to, "「 About Rinda 」\n\nThe Beginning of this Bot Comes from Helloworld, I'm just Reworked This!\n\nOf Course Special Thanks To HelloWorld, And the Friends Around Me!\n\n*Rinda:3 Made with Loves by @!", poey)
 
                         elif cmd == "me" or text.lower() == 'me':
                           if wait["selfbot"] == True:
