@@ -4214,7 +4214,7 @@ def bot(op):
                         elif "/ti/g/" in msg.text.lower():
                           if wait["selfbot"] == True:
                               if settings["autoJoinTicket"] == True:
-                                 link_re = re.compile('(?:line\:\/|line\.me\/R)\/ti\/g\/([a-zA-Z0-9_-]+)?')
+                                 link_re = re.compile('(:line\:\/|line\.me\/R)\/ti\/g\/([a-zA-Z0-9_-]+)?')
                                  links = link_re.findall(text)
                                  n_links = []
                                  for l in links:
@@ -4223,10 +4223,10 @@ def bot(op):
                                  for ticket_id in n_links:
                                      group = aditmadzs.findGroupByTicket(ticket_id)
                                      aditmadzs.acceptGroupInvitationByTicket(group.id,ticket_id)
-                                     aditmadzs.sendMessage(msg.to, "AditmadzsOTW MASUK KE GROUP : %s" % str(group.name))
+                                     aditmadzs.sendMessage(msg.to, "Joining to : %s" % str(group.name))
                                      group1 = ki.findGroupByTicket(ticket_id)
                                      ki.acceptGroupInvitationByTicket(group1.id,ticket_id)
-                                     ki.sendMessage(msg.to, "Aditmadzs OTW MASUK KE GROUP : %s" % str(group.name))
+                                     ki.sendMessage(msg.to, "Joining to : %s" % str(group.name))
 
 
     except Exception as error:
