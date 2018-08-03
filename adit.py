@@ -369,10 +369,11 @@ def help():
                   "│ " + key + "2) Terjemah Arab*on /[off]\n" + \
                   "│ " + key + "3) Terjemah Indo*on /[off]\n" + \
                   "│ " + key + "4) Terjemah Eng*on /[off]\n" + \
-                  "│ " + key + "5) Lurking on/off\n" + \
-                  "│ " + key + "6) Get Lurkers\n" + \
-                  "│ " + key + "7) Rinda bye\n" + \
-                  "│ " + key + "8) About\n" + \
+                  "│ " + key + "5) Get Get Announce\n" + \
+                  "│ " + key + "6) Lurking on/off\n" + \
+                  "│ " + key + "7) Get Lurkers\n" + \
+                  "│ " + key + "8) Rinda bye\n" + \
+                  "│ " + key + "9) About\n" + \
                   "│ " + key + "\n" + \
                   "│ " + key + "[ Rinda Made with Loves by @! ]\n" + \
                   "╰──「 // ENDED HELPER COMMANDS // 」──"
@@ -919,15 +920,14 @@ def bot(op):
                     else:
                         cctv['sidermem'][op.param1] += "\n~ " + Name
                         siderMembers(op.param1, [op.param2])
-                        rembo = aditmadzs.getContact(op.param2)
+                        contact = aditmadzs.getContact(op.param2)
                         #msg.contentType = 13
                         #msg.contentMetadata = {'mid': msg._from}
                         #contact = aditmadzs.getContact(sender)
-                        aditmadzs.sendContact(op.param1, rembo)
+                        #aditmadzs.sendContact(op.param1, rembo)
                         #image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
                         #aditmadzs.sendImageWithURL(op.param1, image)
                         
-                    
         if op.type == 65:
             if wait["unsend"] == True:
                 try:
@@ -1608,7 +1608,21 @@ def bot(op):
                                eltime = time.time() - mulai
                                bot = "Aktif " +waktu(eltime)
                                aditmadzs.sendMessage(msg.to,bot)
-                            
+
+                        elif cmd == "get new announce":
+                          if wait["selfbot"] == True:
+                            try:
+                                gett = aditmadzs.getChatRoomAnnouncements(msg.to)
+                                for a in gett:
+                                    aa = aditmadzs.getContact(a.creatorMid).displayName
+                                    bb = a.contents
+                                    cc = bb.link
+                                    textt = bb.text
+                                    aditmadzs.sendText(msg.to, '「 Announcement 」\n\nFind Text Here - \n' + str(cc) + '\n\nDari: ' + str(aa))
+                                    break
+                            except Exception as e:
+                                aditmadzs.sendText(msg.to, "Announce Tidak Ditemukan:((((")
+
                         elif cmd == "ginfo":
                           if msg._from in admin:
                             try:
