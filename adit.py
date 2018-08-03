@@ -919,11 +919,11 @@ def bot(op):
                     else:
                         cctv['sidermem'][op.param1] += "\n~ " + Name
                         siderMembers(op.param1, [op.param2])
-                        contact = aditmadzs.getContact(op.param2)
-                        msg.contentType = 13
-                        msg.contentMetadata = {'mid': msg._from}
-                        contact = aditmadzs.getContact(sender)
-                        aditmadzs.sendMessage1(msg)
+                        rembo = aditmadzs.getContact(op.param2)
+                        #msg.contentType = 13
+                        #msg.contentMetadata = {'mid': msg._from}
+                        #contact = aditmadzs.getContact(sender)
+                        aditmadzs.sendContact(op.param1, rembo)
                         #image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
                         #aditmadzs.sendImageWithURL(op.param1, image)
                         
