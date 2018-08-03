@@ -30,7 +30,7 @@
     "leave": "Dadah @!",
     "limit": 1,
     "mention": ".",
-    "message": "Eng : Thanks for Added Rinda!\nInd : Terimakasih sudah menambahkan Rinda sebagai Teman!",
+    "message": "Eng : Thanks for Added Rinda to your Friend!\nInd : Terimakasih sudah menambahkan Rinda sebagai Teman kamu!",
     "owner": {},
     "selfbot": true,
     "staff": {},
@@ -38,6 +38,6 @@
     "talkban": false,
     "unsend": true,
     "wblacklist": false,
-    "welcome": "Haiiiiiiiiiiiiiiiii @!",
+    "welcome": "Haiiii<3 @!",
     "welcomeOn": true
 }
