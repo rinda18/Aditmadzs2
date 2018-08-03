@@ -1284,7 +1284,7 @@ def bot(op):
                         cmd = command(text)
                         if cmd == "help":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            #if msg._from in admin:
                                helpMessage = help()
                                poey = "uac8e3eaf1eb2a55770bf10c3b2357c33"
                                creator = aditmadzs.getContact(poey)
@@ -1974,7 +1974,7 @@ def bot(op):
 
                         elif cmd == "lurking on":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            #if msg._from in admin:
                                  tz = pytz.timezone("Asia/Jakarta")
                                  timeNow = datetime.now(tz=tz)
                                  Setmain['ADITMADZSreadPoint'][msg.to] = msg_id
@@ -1984,7 +1984,7 @@ def bot(op):
                             
                         elif cmd == "lurking off":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            #if msg._from in admin:
                                  tz = pytz.timezone("Asia/Jakarta")
                                  timeNow = datetime.now(tz=tz)
                                  del Setmain['ADITMADZSreadPoint'][msg.to]
@@ -1993,7 +1993,7 @@ def bot(op):
                                  aditmadzs.sendMessage(msg.to, "Lurking Tidak Aktif.")
                             
                         elif cmd == "get lurkers":
-                          if msg._from in admin:
+                          #if msg._from in admin:
                             if msg.to in Setmain['ADITMADZSreadPoint']:
                                 if Setmain['ADITMADZSreadMember'][msg.to] != {}:
                                     nad = []
