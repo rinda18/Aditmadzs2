@@ -557,7 +557,7 @@ def helpbot():
     return helpMessage1
 
 def terjemahan():
-    terjemahanMessage = """
+    terjemahanMessage2 = """
 ╭──「 // INSERT TRANSL COMMANDS // 」──
 │
 │ Terjemah ke indo on/off
@@ -566,7 +566,7 @@ def terjemahan():
 │
 ╰───「 // ENDED TRANSL COMMANDS // 」──
 """
-    return terjemahanMessage
+    return terjemahanMessage2
     
 def infomeme():
     helpMessage2 = """
@@ -1476,13 +1476,14 @@ def bot(op):
 
                         elif text.lower() == "about":
                           if wait["selfbot"] == True:
-                            poey = "uac8e3eaf1eb2a55770bf10c3b2357c33"
-                            creator = aditmadzs.getContact(poey)
-                            sendMentions(to, "「 About Rinda 」\n\nThe Beginning of this Bot Comes from Helloworld, I'm just Reworked This!\n\nOf Course Special Thanks To HelloWorld, And the Friends Around Me!\n\n*Rinda:3 Made with Loves by @!", poey)
+                            #if msg._from in admin:
+                               poey = "uac8e3eaf1eb2a55770bf10c3b2357c33"
+                               creator = aditmadzs.getContact(poey)
+                               sendMentions(to, "「 About Rinda 」\n\nThe Beginning of this Bot Comes from Helloworld, I'm just Reworked This!\n\nOf Course Special Thanks To HelloWorld, And the Friends Around Me!\n\n*Rinda:3 Made with Loves by @!", [poey])
 
                         elif cmd == "me" or text.lower() == 'me':
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            #if msg._from in admin:
                                #msg.contentType = 13
                                #msg.contentMetadata = {'mid': msg._from}
                                contact = aditmadzs.getContact(sender)
