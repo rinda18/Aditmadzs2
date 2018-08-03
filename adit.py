@@ -1450,12 +1450,12 @@ def bot(op):
                                     ma = aditmadzs.getContact(i)
                                     aditmadzs.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
 
-                        elif cmd.startswith("about"):
+                        elif cmd.startswith("aboutszs"):
                             try:
                                 arr = []
                                 Ownerz = "uac8e3eaf1eb2a55770bf10c3b2357c33"
                                 creator = aditmadzs.getContact(Ownerz)
-                                contact = aditmadzs.getContact(puyMid)
+                                #contact = aditmadzs.getContact(puyMid)
                                 grouplist = aditmadzs.getGroupIdsJoined()
                                 contactlist = aditmadzs.getAllContactIds()
                                 blockedlist = aditmadzs.getBlockedContactIds()
@@ -1473,6 +1473,12 @@ def bot(op):
                                 sendMentions(to, "「 About Rinda 」\n\nThe Beginning of this Bot Comes from Helloworld, I'm just Reworked This!\n\nOf Course Special Thanks To HelloWorld, And the Friends Around Me!\n\n*Rinda:3 Made with Loves by @!", [Ownerz])
                             except Exception as e:
                                 aditmadzs.sendMessage(msg.to, str(e))
+
+                        if cmd == "about":
+                          if wait["selfbot"] == True:
+                               poey = "uac8e3eaf1eb2a55770bf10c3b2357c33"
+                               creator = aditmadzs.getContact(poey)
+                               sendMentions(to, poey)
 
                         elif cmd == "me" or text.lower() == 'me':
                           if wait["selfbot"] == True:
