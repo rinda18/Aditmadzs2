@@ -3254,13 +3254,13 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["Talkwblacklist"] = True
-                                aditmadzs.sendMessage(msg.to,"Kirim kontaknya...")
+                                aditmadzs.sendMessage(msg.to,"Kontaknya?")
 
                         elif cmd == "untalkban:on" or text.lower() == 'untalkban:on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["Talkdblacklist"] = True
-                                aditmadzs.sendMessage(msg.to,"Kirim kontaknya...")
+                                aditmadzs.sendMessage(msg.to,"Kontaknya?")
 
                         elif ("Ban " in msg.text):
                           if wait["selfbot"] == True:
@@ -3273,7 +3273,7 @@ def bot(op):
                                for target in targets:
                                        try:
                                            wait["blacklist"][target] = True
-                                           aditmadzs.sendMessage(msg.to,"Berhasil menambahkan blacklist")
+                                           aditmadzs.sendMessage(msg.to,"+1 Blacklist")
                                        except:
                                            pass
 
@@ -3288,7 +3288,7 @@ def bot(op):
                                for target in targets:
                                        try:
                                            del wait["blacklist"][target]
-                                           aditmadzs.sendMessage(msg.to,"Berhasil menghapus blacklist")
+                                           aditmadzs.sendMessage(msg.to,"-1 Blacklist")
                                        except:
                                            pass
 
@@ -3296,13 +3296,13 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["wblacklist"] = True
-                                aditmadzs.sendMessage(msg.to,"Kirim kontaknya...")
+                                aditmadzs.sendMessage(msg.to,"Kontaknya?")
 
                         elif cmd == "unban:on" or text.lower() == 'unban:on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["dblacklist"] = True
-                                aditmadzs.sendMessage(msg.to,"Kirim kontaknya...")
+                                aditmadzs.sendMessage(msg.to,"Kontaknya?")
 
                         elif cmd == "banlist" or text.lower() == 'banlist':
                           if wait["selfbot"] == True:
@@ -3316,7 +3316,7 @@ def bot(op):
                                     a = a + 1
                                     end = '\n'
                                     ma += str(a) + ". " +aditmadzs.getContact(m_id).displayName + "\n"
-                                aditmadzs.sendMessage(msg.to,"⏩ Blacklist User\n\n"+ma+"\nTotal「%s」Blacklist User" %(str(len(wait["blacklist"]))))
+                                aditmadzs.sendMessage(msg.to," 「 Rinda Blacklist User 」\n\n"+ma+"\n 「 %s 」 Rinda Blacklist User" %(str(len(wait["blacklist"]))))
 
                         elif cmd == "talkbanlist" or text.lower() == 'talkbanlist':
                           if wait["selfbot"] == True:
@@ -3330,7 +3330,7 @@ def bot(op):
                                     a = a + 1
                                     end = '\n'
                                     ma += str(a) + ". " +aditmadzs.getContact(m_id).displayName + "\n"
-                                aditmadzs.sendMessage(msg.to,"⏩ Talkban User\n\n"+ma+"\nTotal「%s」Talkban User" %(str(len(wait["Talkblacklist"]))))
+                                aditmadzs.sendMessage(msg.to," 「 Talkban User 」\n\n"+ma+"\n 「 %s 」 Rinda Tban User" %(str(len(wait["Talkblacklist"]))))
 
                         elif cmd == "blc" or text.lower() == 'blc':
                           if wait["selfbot"] == True:
@@ -3348,7 +3348,7 @@ def bot(op):
                             if msg._from in admin:
                               wait["blacklist"] = {}
                               ragets = aditmadzs.getContacts(wait["blacklist"])
-                              mc = "���%i」User Blacklist" % len(ragets)
+                              mc = " 「%i 」User Blacklist" % len(ragets)
                               aditmadzs.sendMessage(msg.to,"Sukses membersihkan " +mc)
 #===========COMMAND SET============#
                         elif 'Set pesan: ' in msg.text:
@@ -3358,7 +3358,7 @@ def bot(op):
                                   aditmadzs.sendMessage(msg.to, "Gagal mengganti Pesan Message")
                               else:
                                   wait["message"] = spl
-                                  aditmadzs.sendMessage(msg.to, "「Pesan Msg」\nPesan Message diganti jadi :\n\n「{}」".format(str(spl)))
+                                  aditmadzs.sendMessage(msg.to, " 「 Pesan Msg 」\nPesan Message diterapkan menjadi :\n\n「 {} 」".format(str(spl)))
 
                         elif 'Set welcome: ' in msg.text:
                            if msg._from in admin:
@@ -3367,7 +3367,7 @@ def bot(op):
                                   aditmadzs.sendMessage(msg.to, "Gagal mengganti Welcome Message")
                               else:
                                   wait["welcome"] = spl
-                                  aditmadzs.sendMessage(msg.to, "「Welcome Msg」\nWelcome Message diganti jadi :\n\n「{}」".format(str(spl)))
+                                  aditmadzs.sendMessage(msg.to, " 「 Welcome Msg 」\nWelcome Message diterapkan menjadi :\n\n「 {} 」".format(str(spl)))
                                   
                         elif 'Set leave: ' in msg.text:
                            if msg._from in admin:
@@ -3376,7 +3376,7 @@ def bot(op):
                                   aditmadzs.sendMessage(msg.to, "Gagal mengganti Leave Message")
                               else:
                                   wait["leave"] = spl
-                                  aditmadzs.sendMessage(msg.to, "「Leave Msg」\nLeave Message diganti jadi :\n\n「{}」".format(str(spl)))                                    
+                                  aditmadzs.sendMessage(msg.to, " 「 Leave Msg 」\nLeave Message diterapkan menjadi :\n\n「 {} 」".format(str(spl)))                                    
 
                         elif 'Set respon: ' in msg.text:
                            if msg._from in admin:
@@ -3385,7 +3385,7 @@ def bot(op):
                                   aditmadzs.sendMessage(msg.to, "Gagal mengganti Respon Message")
                               else:
                                   wait["Respontag"] = spl
-                                  aditmadzs.sendMessage(msg.to, "「Respon Msg」\nRespon Message diganti jadi :\n\n「{}」".format(str(spl)))
+                                  aditmadzs.sendMessage(msg.to, " 「Respon Msg」\nRespon Message diterapkan menjadi :\n\n「 {} 」".format(str(spl)))
 
                         elif 'Set spam: ' in msg.text:
                            if msg._from in admin:
@@ -3394,7 +3394,7 @@ def bot(op):
                                   aditmadzs.sendMessage(msg.to, "Gagal mengganti Spam")
                               else:
                                   Setmain["ADITMADZSmessage1"] = spl
-                                  aditmadzs.sendMessage(msg.to, "「Spam Msg」\nSpam Message diganti jadi :\n\n「{}」".format(str(spl)))
+                                  aditmadzs.sendMessage(msg.to, " 「 Spam Msg 」\nSpam Message diterapkan menjadi :\n\n「 {} 」".format(str(spl)))
 
                         elif 'Set sider: ' in msg.text:
                            if msg._from in admin:
@@ -3403,31 +3403,31 @@ def bot(op):
                                   aditmadzs.sendMessage(msg.to, "Gagal mengganti Sider Message")
                               else:
                                   wait["mention"] = spl
-                                  aditmadzs.sendMessage(msg.to, "「Sider Msg」\nSider Message diganti jadi :\n\n「{}」".format(str(spl)))
+                                  aditmadzs.sendMessage(msg.to, " 「 Sider Msg 」\nSider Message diterapkan menjadi :\n\n「 {} 」".format(str(spl)))
 
                         elif text.lower() == "cek pesan":
                             if msg._from in admin:
-                               aditmadzs.sendMessage(msg.to, "「Pesan Msg」\nPesan Message lu :\n\n「 " + str(wait["message"]) + " 」")
+                               aditmadzs.sendMessage(msg.to, " 「 Pesan Msg 」\nPesan Message terkini :\n\n「 " + str(wait["message"]) + " 」")
 
                         elif text.lower() == "cek welcome":
                             if msg._from in admin:
-                               aditmadzs.sendMessage(msg.to, "「Welcome Msg」\nWelcome Message lu :\n\n「 " + str(wait["welcome"]) + " 」")
+                               aditmadzs.sendMessage(msg.to, "「Welcome Msg」\nWelcome Message terkini :\n\n「 " + str(wait["welcome"]) + " 」")
                                
                         elif text.lower() == "cek leave":
                             if msg._from in admin:
-                               aditmadzs.sendMessage(msg.to, "「Leave Msg」\nLeave Message lu :\n\n「 " + str(wait["leave"]) + " 」")                                 
+                               aditmadzs.sendMessage(msg.to, "「Leave Msg」\nLeave Message terkini :\n\n「 " + str(wait["leave"]) + " 」")                                 
 
                         elif text.lower() == "cek respon":
                             if msg._from in admin:
-                               aditmadzs.sendMessage(msg.to, "「Respon Msg」\nRespon Message lu :\n\n「 " + str(wait["Respontag"]) + " 」")
+                               aditmadzs.sendMessage(msg.to, "「Respon Msg」\nRespon Message terkini :\n\n「 " + str(wait["Respontag"]) + " 」")
 
                         elif text.lower() == "cek spam":
                             if msg._from in admin:
-                               aditmadzs.sendMessage(msg.to, "「Spam Msg」\nSpam Message lu :\n\n「 " + str(Setmain["ADITMADZSmessage1"]) + " 」")
+                               aditmadzs.sendMessage(msg.to, "「Spam Msg」\nSpam Message terkini :\n\n「 " + str(Setmain["ADITMADZSmessage1"]) + " 」")
 
                         elif text.lower() == "cek sider":
                             if msg._from in admin:
-                               aditmadzs.sendMessage(msg.to, "「Sider Msg」\nSider Message lu :\n\n「 " + str(wait["mention"]) + " 」")
+                               aditmadzs.sendMessage(msg.to, "「Sider Msg」\nSider Message terkini :\n\n「 " + str(wait["mention"]) + " 」")
 
 #===========JOIN TICKET============#
                         elif "/ti/g/" in msg.text.lower():
