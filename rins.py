@@ -258,33 +258,6 @@ def siderMembers(to, mid):
     except Exception as error:
         aditmadzs.sendMessage(to, "[ INFO ] Error :\n" + str(error))
 
-def AutoAddMsgs(to, mid):
-    try:
-        arrData = ""
-        textx = " [ AutoAdd Message ]\n\n< {} >\n".format(str(len(mid)))
-        arr = []
-        no = 1
-        num = 2
-        for i in mid:
-            mention = "@x\n"
-            slen = str(len(textx))
-            elen = str(len(textx) + len(mention) - 1)
-            arrData = {'S':slen, 'E':elen, 'M':i}
-            arr.append(arrData)
-            textx += mention+wait["message"]
-            if no < len(mid):
-                no += 1
-                textx += "%i. " % (num)
-                num=(num+1)
-            else:
-                try:
-                    no = "\n {}".format(str(aditmadzs.getGroup(to).name))
-                except:
-                    no = "\n Yeayea"
-        aditmadzs.sendMessage(to, textx, {'MENTION': str('{"MENTIONEES":' + json.dumps(arr) + '}')}, 0)
-    except Exception as error:
-        aditmadzs.sendMessage(to, "[ INFO ] Error :\n" + str(error))
-
 def welcomeMembers(to, mid):
     try:
         arrData = ""
@@ -837,10 +810,10 @@ def bot(op):
                     if (wait["message"] in [" "," ","\n",None]):
                         pass
                     else:
-                        #aditmadzs.sendMessage(op.param1, wait["message"])
+                        aditmadzs.sendMessage(op.param1, wait["message"])
                         #sendMention(op.param1, wait["message"])
                         #sendMentions(op.param1, "Hei @!\nTerimakasi sudah menambahkan Rinda sebagai Teman.")
-                        AutoAddMsgs(op.param1)
+                        #AutoAddMsgs(op.param1)
 
 #===========KICK============#
         if op.type == 19:
@@ -1014,12 +987,12 @@ def bot(op):
                         cctv['sidermem'][op.param1] += "\n~ " + Name
                         siderMembers(op.param1, [op.param2])
                         contact = aditmadzs.getContact(op.param2)
-                        msg.contentType = 13
-                        msg.contentMetadata = {'mid': msg._from}
+                        #msg.contentType = 13
+                        #msg.contentMetadata = {'mid': msg._from}
                         #contact = aditmadzs.getContact(sender)
                         #aditmadzs.sendContact(op.param1, rembo)
-                        #image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
-                        #aditmadzs.sendImageWithURL(op.param1, image)
+                        image = "https://duniagames.co.id/image/jpg/116131/1080/720"#+ contact.pictureStatus
+                        aditmadzs.sendImageWithURL(op.param1, image)
                         
         if op.type == 65:
             if wait["unsend"] == True:
