@@ -845,7 +845,7 @@ def bot(op):
                         pass
                     else:
                         #aditmadzs.sendMessage(op.param1, wait["message"])
-                        sendMention(op.param1, "@x", wait["message"])
+                        sendMentions(op.param1, wait["message"])
 
 #===========KICK============#
         if op.type == 19:
