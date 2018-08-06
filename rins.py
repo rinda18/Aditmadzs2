@@ -978,7 +978,7 @@ def bot(op):
             else:
                 pass
 
-            if cctv['cyduk'][op.param1] == True
+            if cctv['cyduk'][op.param1] == True:
                 if op.param1 in cctv['point']:
                     Name = aditmadzs.getContact(op.param2).displayName
                     if Name in cctv['sidermem'][op.param1]:
