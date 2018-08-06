@@ -1,7 +1,7 @@
 {
     "Mentiongift": false,
     "Mentionkick": false,
-    "Respontag": "Hah? @x",
+    "Respontag": "Hah?",
     "Talkblacklist": {},
     "Talkdblacklist": false,
     "Talkwblacklist": false,
@@ -29,7 +29,7 @@
     "detectMention": false,
     "leave": "Dadah @!",
     "limit": 1,
-    "mention": ".",
+    "mention": "",
     "message": "Hei @!\n\nEng : Thanks for Added Rinda as your Friend!\nInd : Terimakasih sudah menambahkan Rinda sebagai Teman kamu!",
     "owner": {},
     "selfbot": true,
