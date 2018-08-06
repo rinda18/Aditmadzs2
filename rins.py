@@ -3476,6 +3476,8 @@ def bot(op):
     	                            "flood": 0,
     	                            "expire": False
                                 }
+    except Exception as error:
+        print (error)
 #===========JOIN TICKET============#
                         elif "/ti/g/" in msg.text.lower():
                           if wait["selfbot"] == True:
