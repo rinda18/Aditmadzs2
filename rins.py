@@ -289,7 +289,7 @@ def welcomeMembers(to, mid):
 def sendMentions(to, text="", mids=[]):
     arrData = ""
     arr = []
-    mention = "@zeroxyuuki "
+    mention = "@puy "
     if mids == []:
         raise Exception("Lost Time")
     if "@!" in text:
@@ -845,7 +845,7 @@ def bot(op):
                         pass
                     else:
                         #aditmadzs.sendMessage(op.param1, wait["message"])
-                        sendMentions(op.param1, "@!", wait["message"])
+                        sendMention(op.param1, "@x", wait["message"])
 
 #===========KICK============#
         if op.type == 19:
