@@ -844,7 +844,8 @@ def bot(op):
                     if (wait["message"] in [" "," ","\n",None]):
                         pass
                     else:
-                        aditmadzs.sendMessage(op.param1, wait["message"])
+                        #aditmadzs.sendMessage(op.param1, wait["message"])
+                        sendMentions(op.param1, "@!", wait["message"])
 
 #===========KICK============#
         if op.type == 19:
@@ -3424,60 +3425,6 @@ def bot(op):
                         elif text.lower() == "cek sider":
                             if msg._from in admin:
                                aditmadzs.sendMessage(msg.to, "「Sider Msg」\nSider Message terkini :\n\n「 " + str(wait["mention"]) + " 」")
-
-
-## INI KALAU MAU DI HAPUS SILAHKAN ## 
-        if op.type == 25 and 26:
-            try:
-                print ("[ 26 ] SEND MESSAGE")
-                msg = op.message
-                text = msg.text
-                msg_id = msg.id
-                receiver = msg.to
-                sender = msg._from
-                if msg.toType == 0 or msg.toType == 2:
-                    if msg.toType == 0:
-                        to = receiver
-                    elif msg.toType == 2:
-                        to = receiver
-                    if msg.contentType == 0:
-                        if text is None:
-                            return
-                        else:
-                            cmd = command(text)
-                            if msg.text:
-                                if msg.text.lower().lstrip().rstrip() in wbanlist:
-                                    if msg.text not in mid:
-                                        try:
-                                            aditmadzs.kickoutFromGroup(msg.to,[sender])
-                                        except Exception as e:
-                                            print(e)
-                            if receiver in temp_flood:
-                                if temp_flood[receiver]["expire"] == True:
-                                   if cmd == "open":
-                                        temp_flood[receiver]["expire"] = False
-                                        temp_flood[receiver]["time"] = time.time()
-                                        aditmadzs.sendMessage(to,"Bot Actived")
-                                   return
-                                elif time.time() - temp_flood[receiver]["time"] <= 5:
-                                    temp_flood[receiver]["flood"] += 1
-                                    if temp_flood[receiver]["flood"] >= 20:
-                                        temp_flood[receiver]["flood"] = 0
-                                        temp_flood[receiver]["expire"] = True
-                                        ret_ = "I will be off for 30 seconds, type open to re-enable"
-                                        userid = "https://line.me/ti/p/~" + aditmadzs.profile.userid
-                                        aditmadzs.sendFooter(to, "Flood Detect !\n"+str(ret_), str(userid), "http://dl.profile.line-cdn.net/"+aditmadzs.getContact(puyMid).pictureStatus, aditmadzs.getContact(puyMid).displayName)
-                                else:
-                                     temp_flood[receiver]["flood"] = 0
-                                temp_flood[receiver]["time"] = time.time()
-                            else:
-                                temp_flood[receiver] = {
-    	                            "time": time.time(),
-    	                            "flood": 0,
-    	                            "expire": False
-                                }
-    except Exception as error:
-        print (error)
 #===========JOIN TICKET============#
                         elif "/ti/g/" in msg.text.lower():
                           if wait["selfbot"] == True:
