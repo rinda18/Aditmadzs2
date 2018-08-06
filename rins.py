@@ -845,7 +845,8 @@ def bot(op):
                         pass
                     else:
                         #aditmadzs.sendMessage(op.param1, wait["message"])
-                        sendMention(op.param1, wait["message"])
+                        #sendMention(op.param1, wait["message"])
+                        sendMention(op.param1, "Hei @x\nTerimakasi sudah menambahkan Rinda sebagai Teman.)
 
 #===========KICK============#
         if op.type == 19:
