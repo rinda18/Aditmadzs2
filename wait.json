@@ -14,9 +14,7 @@
     "autoJoinTicket": true,
     "autoLeave": false,
     "autoLeave1": false,
-    "blacklist": {
-        "ub3c2810ee372305631758bd937deb517": true
-    },
+    "blacklist": {},
     "bots": {},
     "comment": "Liked by PUY",
     "contact": false,
