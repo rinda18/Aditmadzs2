@@ -23,10 +23,10 @@
     "dellbots": false,
     "dellstaff": false,
     "detectMention": false,
-    "leave": "Dadah @!",
+    "leave": "Dadah",
     "limit": 1,
     "mention": "",
-    "message": "Hei\n\nEng : Thanks for Added Rinda as your Friend!\nInd : Terimakasih sudah menambahkan Rinda sebagai Teman kamu!",
+    "message": "「Hei」\n\nEng : Thanks for Added Rinda as your Friend!\nInd : Terimakasih sudah menambahkan Rinda sebagai Teman kamu!",
     "owner": {},
     "selfbot": true,
     "staff": {},
@@ -34,6 +34,6 @@
     "talkban": false,
     "unsend": false,
     "wblacklist": false,
-    "welcome": "Haiiii<3 @!",
+    "welcome": "「Haiiii<3」",
     "welcomeOn": true
 }
