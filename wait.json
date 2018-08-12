@@ -23,7 +23,7 @@
     "dellbots": false,
     "dellstaff": false,
     "detectMention": false,
-    "leave": "「Selamat Jalan」",
+    "leave": "Selamat Jalan",
     "limit": 1,
     "mention": "",
     "message": "「Hei」\n\nEng : Thanks for Added Rinda as your Friend!\nInd : Terimakasih sudah menambahkan Rinda sebagai Teman kamu!",
