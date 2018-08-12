@@ -270,7 +270,7 @@ def siderMembers(to, mid):
 def welcomeMembers(to, mid):
     try:
         arrData = ""
-        textx = "「 Member Joined 」\n" #.format(str(len(mid))+"」")
+        textx = "  「 Member Joined 」\n" #.format(str(len(mid))+"」")
         arr = []
         no = 1
         num = 2
@@ -281,7 +281,7 @@ def welcomeMembers(to, mid):
             elen = str(len(textx) + len(mention) - 1)
             arrData = {'S':slen, 'E':elen, 'M':i}
             arr.append(arrData)
-            textx += mention+wait["welcome"]+"\n Selamat Datang di : "+str(ginfo.name)
+            textx += mention+wait["welcome"]+"\nSelamat Datang di : "+str(ginfo.name)
             if no < len(mid):
                 no += 1
                 textx += "%i. " % (num)
@@ -326,7 +326,7 @@ def sendMentions(to, text="", mids=[]):
 def leaveMembers(to, mid):
     try:
         arrData = ""
-        textx = " ".format(str(len(mid))+"」")
+        textx = "  「 Member Leaved 」\n" #.format(str(len(mid))+"」")
         arr = []
         no = 1
         num = 2
@@ -337,7 +337,7 @@ def leaveMembers(to, mid):
             elen = str(len(textx) + len(mention) - 1)
             arrData = {'S':slen, 'E':elen, 'M':i}
             arr.append(arrData)
-            textx += mention+wait["leave"]+" : "+str(ginfo.name)
+            textx += mention+wait["leave"] #+" da: "+str(ginfo.name)
             if no < len(mid):
                 no += 1
                 textx += "%i. " % (num)
@@ -2776,16 +2776,16 @@ def bot(op):
                                   else:
                                        translateen.append(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = "Terjemah langsung Diaktifkan Di Grup \n< " +str(ginfo.name + " >")
-                                  aditmadzs.sendMessage(msg.to, "「 Translate to English 」\n" + msgs)
+                                       msgs = "Terjemah Langsung Diaktifkan"
+                                  aditmadzs.sendMessage(msg.to, "  「 Translate to English 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in translateen:
                                          translateen.remove(msg.to)
                                          ginfo = aditmadzs.getGroup(msg.to)
-                                         msgs = "Terjemah langsung Dinonaktifkan Di Grup \n< " +str(ginfo.name + " >")
+                                         msgs = "Terjemah Langsung Dinonaktifkan"
                                     else:
                                          msgs = "Terjemah langsung Sudah Tidak Aktif"
-                                    aditmadzs.sendMessage(msg.to, "「 Translate to English 」\n" + msgs)
+                                    aditmadzs.sendMessage(msg.to, "  「 Translate to English 」\n" + msgs)
                                     
                         elif 'Transto indo*' in msg.text:
                               spl = msg.text.replace('Transto indo*','')
@@ -2795,16 +2795,16 @@ def bot(op):
                                   else:
                                        translateid.append(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = "Terjemah langsung Diaktifkan Di Grup \n< " +str(ginfo.name + " >")
-                                  aditmadzs.sendMessage(msg.to, "「 Translate to Indonesia 」\n" + msgs)
+                                       msgs = "Terjemah Langsung Diaktifkan"
+                                  aditmadzs.sendMessage(msg.to, "  「 Translate to Indonesia 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in translateid:
                                          translateid.remove(msg.to)
                                          ginfo = aditmadzs.getGroup(msg.to)
-                                         msgs = "Terjemah langsung Dinonaktifkan Di Grup \n< " +str(ginfo.name + " >")
+                                         msgs = "Terjemah Langsung Dinonaktifkan"
                                     else:
                                          msgs = "Terjemah langsung Sudah Tidak Aktif"
-                                    aditmadzs.sendMessage(msg.to, "「 Translate to Indonesia 」\n" + msgs)                                    
+                                    aditmadzs.sendMessage(msg.to, "  「 Translate to Indonesia 」\n" + msgs)                                    
 
                         elif 'Transto arab*' in msg.text:
                               spl = msg.text.replace('Transto arab*','')
@@ -2814,36 +2814,36 @@ def bot(op):
                                   else:
                                        translatear.append(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = "Terjemah langsung Diaktifkan Di Grup \n< " +str(ginfo.name + " >")
-                                  aditmadzs.sendMessage(msg.to, "「 Translate to Arab 」\n" + msgs)
+                                       msgs = "Terjemah langsung Diaktifkan" #\n< " +str(ginfo.name + " >")
+                                  aditmadzs.sendMessage(msg.to, "  「 Translate to Arab 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in translatear:
                                          translatear.remove(msg.to)
                                          ginfo = aditmadzs.getGroup(msg.to)
-                                         msgs = "Terjemah langsung Dinonaktifkan Di Grup \n< " +str(ginfo.name + " >")
+                                         msgs = "Terjemah Langsung Dinonaktifkan" #\n< " +str(ginfo.name + " >")
                                     else:
                                          msgs = "Terjemah langsung Sudah Tidak Aktif"
-                                    aditmadzs.sendMessage(msg.to, "「 Translate to Arab 」\n" + msgs)                                    
+                                    aditmadzs.sendMessage(msg.to, "  「 Translate to Arab 」\n" + msgs)                                    
 
-                        elif 'Welcome ' in msg.text:
-                           if msg._from in admin:
-                              spl = msg.text.replace('Welcome ','')
+                        elif 'Welcomemsg ' in msg.text:
+                           if msg._from in owner:
+                              spl = msg.text.replace('Welcomemsg ','')
                               if spl == 'on':
                                   if msg.to in welcome:
                                        msgs = "Welcome Msg sudah aktif"
                                   else:
                                        welcome.append(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = "Welcome Msg diaktifkan\nDi Group : " +str(ginfo.name)
-                                  aditmadzs.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
+                                       msgs = "Diaktifkan" #\nDi Group : " +str(ginfo.name)
+                                  aditmadzs.sendMessage(msg.to, "  「 Welcome Messages 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in welcome:
                                          welcome.remove(msg.to)
                                          ginfo = aditmadzs.getGroup(msg.to)
-                                         msgs = "Welcome Msg dinonaktifkan\nDi Group : " +str(ginfo.name)
+                                         msgs = "Dinonaktifkan" #\nDi Group : " +str(ginfo.name)
                                     else:
                                          msgs = "Welcome Msg sudah tidak aktif"
-                                    aditmadzs.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
+                                    aditmadzs.sendMessage(msg.to, "  「 Welcome Messages 」\n" + msgs)
                                     
 #===========Protection============#                                    
 
@@ -2856,16 +2856,16 @@ def bot(op):
                                   else:
                                        protectqr.append(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = " Diaktifkan"
-                                  aditmadzs.sendMessage(msg.to, "「 QrSecure 」\n" + msgs)
+                                       msgs = "Diaktifkan"
+                                  aditmadzs.sendMessage(msg.to, "  「 QrSecure 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in protectqr:
                                        protectqr.remove(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = " Dinonaktifkan"
+                                       msgs = "Dinonaktifkan"
                                     else:
                                          msgs = "Protection Ticket Group Status is UnActived"
-                                    aditmadzs.sendMessage(msg.to, "「 QrSecure 」\n" + msgs)
+                                    aditmadzs.sendMessage(msg.to, "  「 QrSecure 」\n" + msgs)
 
                         elif 'S2 ' in msg.text:
                            if msg._from in admin:
@@ -2876,16 +2876,16 @@ def bot(op):
                                   else:
                                        protectkick.append(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = " Diaktifkan"
-                                  aditmadzs.sendMessage(msg.to, "「 KickingSecure 」\n" + msgs)
+                                       msgs = "Diaktifkan"
+                                  aditmadzs.sendMessage(msg.to, "  「 KickingSecure 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in protectkick:
                                        protectkick.remove(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = " Dinonaktifkan"
+                                       msgs = "Dinonaktifkan"
                                     else:
                                          msgs = "Protection Anti Kick Status is UnActived"
-                                    aditmadzs.sendMessage(msg.to, "「 KickingSecure 」\n" + msgs)
+                                    aditmadzs.sendMessage(msg.to, "  「 KickingSecure 」\n" + msgs)
 
                         elif 'S4 ' in msg.text:
                            if msg._from in admin:
@@ -2896,16 +2896,16 @@ def bot(op):
                                   else:
                                        protectjoin.append(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = " Diaktifkan"
-                                  aditmadzs.sendMessage(msg.to, "「 JoiningSecure 」\n" + msgs)
+                                       msgs = "Diaktifkan"
+                                  aditmadzs.sendMessage(msg.to, "  「 JoiningSecure 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in protectjoin:
                                        protectjoin.remove(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = " Dinonaktifkan"
+                                       msgs = "Dinonaktifkan"
                                     else:
                                          msgs = "Protection Member Joined Status is UnActived"
-                                    aditmadzs.sendMessage(msg.to, "「 JoiningSecure 」\n" + msgs)
+                                    aditmadzs.sendMessage(msg.to, "  「 JoiningSecure 」\n" + msgs)
 
                         elif 'S3 ' in msg.text:
                            if msg._from in admin:
@@ -2916,16 +2916,16 @@ def bot(op):
                                   else:
                                        protectcancel.append(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = " Diaktifkan"
-                                  aditmadzs.sendMessage(msg.to, "「 CancellingSecure 」\n" + msgs)
+                                       msgs = "Diaktifkan"
+                                  aditmadzs.sendMessage(msg.to, "  「 CancellingSecure 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in protectcancel:
                                        protectcancel.remove(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = " Dinonaktifkan"
+                                       msgs = "Dinonaktifkan"
                                     else:
                                          msgs = "Protection Anti Cancel Status is UnActived"
-                                    aditmadzs.sendMessage(msg.to, "「 CancellingSecure 」\n" + msgs)
+                                    aditmadzs.sendMessage(msg.to, "  「 CancellingSecure 」\n" + msgs)
                                     
                         elif 'S1 ' in msg.text:
                            if msg._from in admin:
@@ -2936,16 +2936,16 @@ def bot(op):
                                   else:
                                        protectinvite.append(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = " Diaktifkan"
-                                  aditmadzs.sendMessage(msg.to, "「 InvitingSecure 」\n" + msgs)
+                                       msgs = "Diaktifkan"
+                                  aditmadzs.sendMessage(msg.to, "  「 InvitingSecure 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in protectinvite:
                                        protectinvite.remove(msg.to)
                                        ginfo = aditmadzs.getGroup(msg.to)
-                                       msgs = " Dinonaktifkan"
+                                       msgs = "Dinonaktifkan"
                                     else:
                                          msgs = "Protection Anti Invite Status is UnActived"
-                                    aditmadzs.sendMessage(msg.to, "「 InvitingSecure 」\n" + msgs)
+                                    aditmadzs.sendMessage(msg.to, "  「 InvitingSecure 」\n" + msgs)
 
                         elif 'Allsecure ' in msg.text:
                            if msg._from in admin:
@@ -2969,12 +2969,12 @@ def bot(op):
                                       protectjoin.append(msg.to)
                                   if msg.to in protectcancel:
                                       ginfo = aditmadzs.getGroup(msg.to)
-                                      msgs = " All Secure Telah Aktif"
+                                      msgs = "All Secure Telah Aktif"
                                   else:
                                       protectcancel.append(msg.to)
                                       ginfo = aditmadzs.getGroup(msg.to)
-                                      msgs = " Berhasil Mengaktifkan"
-                                  aditmadzs.sendMessage(msg.to, "「 All Secure 」\n" + msgs)
+                                      msgs = "Berhasil Mengaktifkan"
+                                  aditmadzs.sendMessage(msg.to, "  「 All Secure 」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in protectqr:
                                          protectqr.remove(msg.to)
@@ -2995,11 +2995,11 @@ def bot(op):
                                     if msg.to in protectcancel:
                                          protectcancel.remove(msg.to)
                                          ginfo = aditmadzs.getGroup(msg.to)
-                                         msgs = " All Secure tidak Aktif"
+                                         msgs = "All Secure tidak Aktif"
                                     else:
                                          ginfo = aditmadzs.getGroup(msg.to)
-                                         msgs = " Berhasil Menonaktifkan"
-                                    aditmadzs.sendMessage(msg.to, "「 All Secure 」\n" + msgs)
+                                         msgs = "Berhasil Menonaktifkan"
+                                    aditmadzs.sendMessage(msg.to, "  「 All Secure 」\n" + msgs)
 
 #===========KICKOUT============#
 
