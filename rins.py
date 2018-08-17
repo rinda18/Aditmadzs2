@@ -1806,13 +1806,13 @@ def bot(op):
                            ]
                          }
 
-                         anu = _session.get(url, headers=headers)
-                         data = json.dumps(data)
-                         send = _session.post("https://game.linefriends.com/jbp-lcs-ranking/lcs/sendMessage", data=data, headers=headers)
-                         print(send.json())
-                       if msg.contentType == 7:
-                        stkid = msg.contentMetadata["STKID"]
-                        print(stkid)
+                            anu = _session.get(url, headers=headers)
+                            data = json.dumps(data)
+                            send = _session.post("https://game.linefriends.com/jbp-lcs-ranking/lcs/sendMessage", data=data, headers=headers)
+                            print(send.json())
+                          if msg.contentType == 7:
+                           stkid = msg.contentMetadata["STKID"]
+                           print(stkid)
 
                         elif cmd.startswith("infomem "):
                           if msg._from in admin:
