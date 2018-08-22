@@ -9,26 +9,27 @@ def loggedIn(func):
         else:
             args[0].callback.other("You want to call the function, you must login to LINE")
     return checkLogin
-    
+
 class LineObject(object):
 
     def __init__(self):
         if self.isLogin == True:
-            self.log("[%s] : Waiting for Creating Server" % self.profile.displayName)
+            self.log("\nSabar\n")
+            #self.log("[%s] : Waiting for Creating Server" % self.profile.displayName)
             #dap = "uac8e3eaf1eb2a55770bf10c3b2357c33"
             #topc = self.getContact(dap).displayName
             #self.sendMessage("uac8e3eaf1eb2a55770bf10c3b2357c33", 'Hei %s \n<3' % topc)
             #profile = self.getProfile()
-            #profile.displayName = "Rinda"
+            #profile.displayName = "{̡̢̛͞é̡rr҉́ơ̶̴̸r҉̵̵̡̡}̢̛̀ボットガードグループ"
             #self.updateProfile(profile)
-            #profile.statusMessage = "insta : rinda.ptri12"
+            #profile.statusMessage = "Thanks to PUY"
             #self.updateProfile(profile)
-            #DOMAIN_ = "https://pbs.twimg.com/profile_images/1001808982615277568/EPVaEr4P_400x400.jpg"
+            #DOMAIN_ = "https://img00.deviantart.net/93f6/i/2010/155/1/1/facebook_default_picture_by_adnac.jpg"
             #LINE = self.downloadFileURL(DOMAIN_)
             #self.updateProfilePicture(LINE)
             #PMD = "uac8e3eaf1eb2a55770bf10c3b2357c33"
             #self.findAndAddContactsByMid(PMD)
-            
+
     """Group"""
 
     @loggedIn
@@ -53,7 +54,7 @@ class LineObject(object):
         if r.status_code != 201:
             raise Exception('Update profile picture failure.')
         return True
-        
+
     @loggedIn
     def updateProfileVideoPicture(self, path):
         try:
